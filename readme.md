@@ -14,3 +14,9 @@ $ npm run develop
 ```
 
 
+
+
+
+# admin creds 
+- dev@yopmail.com
+- vexon@Admin123
