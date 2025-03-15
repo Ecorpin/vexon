@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,6 +20,17 @@
       "relation": "oneToOne",
       "target": "api::product-category.product-category",
       "inversedBy": "Products"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "camera_type",
+        "interface",
+        "educational",
+        "industrial",
+        "sensor",
+        "other"
+      ]
     }
   }
 }
