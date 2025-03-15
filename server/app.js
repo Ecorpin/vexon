@@ -8,7 +8,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Serve static files from 'public' directory
-app.use(express.static(path.join(__dirname, 'assets')));
+app.use(express.static(path.join(__dirname, '../', 'assets')));
 
 // Define your routes
 app.get('/', (req, res) => {
@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
     res.render('index', { title: 'Home Page' });
 });
 
-// Additional routes can be added here
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

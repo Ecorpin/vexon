@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particle Wave Inside Gradient Section</title>
+    <style>
+        body { margin: 0; background: #0a192f; overflow-x: hidden; }
+
+        /* Gradient Section */
+        .gradient-section {
+            position: relative;
+            width: 80%;
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(to right, #084C61, #021b1b, #04471C);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* Canvas for Particles */
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind text */
+        }
+
+        /* Text Content */
+        .gradient-content {
+            position: relative;
+            z-index: 1; /* Above particles */
+            color: white;
+        }
+
+        .gradient-content h1 {
+            font-size: 40px;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .gradient-content p {
+            font-size: 20px;
+            color: rgb(100, 219, 154);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Gradient Section -->
+    <section class="gradient-section" id="gradientSection">
+        <!-- Particle Effect Canvas -->
+        <canvas class="particle-canvas" id="particleCanvas"></canvas>
+
+        <!-- Content -->
+        <div class="gradient-content">
+            <h1>Events</h1>
+            <p>Join us at industry events, exhibitions, and technology showcases.</p>
+        </div>
+    </section>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Particle Wave Script -->
+    <script>
+        let scene, camera, renderer, particles = [], count = 0;
+        const SEPARATION = 40, AMOUNTX = 60, AMOUNTY = 30;
+        let mouseX = 0, mouseY = 0;
+        let canvas, container, windowHalfX, windowHalfY;
+        let isMouseInside = false; // Flag to check if mouse is inside
+
+        function init() {
+            // Get canvas and container
+            canvas = document.getElementById("particleCanvas");
+            container = document.getElementById("gradientSection");
+            
+            // Set window size variables
+            windowHalfX = container.clientWidth / 2;
+            windowHalfY = container.clientHeight / 2;
+            
+            // Create Scene
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 1, 5000);
+            camera.position.z = 500;
+
+            // Create Particles
+            let material = new THREE.SpriteMaterial({
+                map: new THREE.CanvasTexture(generateSprite()),
+                blending: THREE.AdditiveBlending
+            });
+
+            for (let ix = 0; ix < AMOUNTX; ix++) {
+                for (let iy = 0; iy < AMOUNTY; iy++) {
+                    let particle = new THREE.Sprite(material);
+                    particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
+                    particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
+                    scene.add(particle);
+                    particles.push(particle);
+                }
+            }
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(container.clientWidth, container.clientHeight);
+
+            // Event Listeners
+            container.addEventListener("mousemove", onMouseMove, false);
+            container.addEventListener("mouseenter", () => { isMouseInside = true; });
+            container.addEventListener("mouseleave", () => {
+                isMouseInside = false;
+                mouseX = 0;
+                mouseY = 0;
+            });
+
+            window.addEventListener("resize", onWindowResize, false);
+        }
+
+        function generateSprite() {
+            let canvas = document.createElement("canvas");
+            canvas.width = 16;
+            canvas.height = 16;
+            let context = canvas.getContext("2d");
+            let gradient = context.createRadialGradient(8, 8, 0, 8, 8, 8);
+            gradient.addColorStop(0, "rgba(73, 197, 177,1)");
+            gradient.addColorStop(1, "rgba(73, 197, 177,0)");
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 16, 16);
+            return canvas;
+        }
+
+        function onMouseMove(event) {
+            if (!isMouseInside) return; // Only update if inside the section
+            let rect = container.getBoundingClientRect();
+            mouseX = event.clientX - rect.left - windowHalfX;
+            mouseY = event.clientY - rect.top - windowHalfY;
+        }
+
+        function onWindowResize() {
+            windowHalfX = container.clientWidth / 2;
+            windowHalfY = container.clientHeight / 2;
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            if (isMouseInside) {
+                camera.position.x += (mouseX - camera.position.x) * 0.05;
+                camera.position.y += (-mouseY - camera.position.y) * 0.05;
+            } else {
+                camera.position.x += (0 - camera.position.x) * 0.05;
+                camera.position.y += (0 - camera.position.y) * 0.05;
+            }
+            camera.lookAt(scene.position);
+
+            let i = 0;
+            for (let ix = 0; ix < AMOUNTX; ix++) {
+                for (let iy = 0; iy < AMOUNTY; iy++) {
+                    let particle = particles[i++];
+                    particle.position.y = (Math.sin((ix + count) * 0.3) * 30) +
+                        (Math.sin((iy + count) * 0.5) * 30);
+                    particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 1.8 +
+                        (Math.sin((iy + count) * 0.5) + 1) * 1.8;
+                }
+            }
+
+            renderer.render(scene, camera);
+            count += 0.1;
+        }
+
+        init();
+        animate();
+    </script>
+
+</body>
+</html>
