@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import HomePage from './pages/Home'
 
 function App() {
 
   return (
     <>
-      <h1 className="text-4xl text-indigo-600 text-center">VIXEN ROBOTICS</h1>
+      <HomePage />
     </>
   )
 }
