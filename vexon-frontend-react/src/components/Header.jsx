@@ -28,7 +28,7 @@ const Header = () => {
 
     return (
         <>
-            <div className="bg-[#021b18] w-full text-white relative" ref={popoverRef}>
+            <div className="bg-[#021b18] w-full text-white" ref={popoverRef}>
                 <div className="flex justify-between mx-8 py-2">
                     <img src="/images/logo/logo-bg.png" alt="" className="h-[80px] w-auto" />
                     <div className="flex flex-row">
@@ -50,7 +50,6 @@ const Header = () => {
                     <button type="button" onClick={(e) => handleMenuItemSelection(e, 'Company')} className="text-lg mx-14">COMPANY</button>
                     <button type="button" onClick={(e) => handleMenuItemSelection(e, 'Contact')} className="text-lg mx-14">CONTACT</button>
                 </div>
-                {/* Popover panel */}
                 {isOpen && <PopoverCard selectedMenu={selectedMenu} />}
             </div>
         </>
