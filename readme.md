@@ -1,7 +1,6 @@
-# VEXON 
+# Vexon Robotics
 
-### development environment
-
+#### Setup development environment
 move to the `backend-strapi` directory and run the following commands:
 - to install dependencies
 ```
@@ -14,9 +13,6 @@ $ npm run develop
 ```
 
 
-
-
-
-# admin creds 
+### admin credentials
 - dev@yopmail.com
 - vexon@Admin123

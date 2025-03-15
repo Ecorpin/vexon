@@ -1,6 +1,6 @@
 {
-  "name": "vexon",
-  "version": "1.0.0",
+  "name": "vexon-robotics",
+  "version": "2.2.0",
   "description": "### development environment",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "url": "git@github-private:Ecorpin/vexon.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bhagwan Singh - bhagwan.5602@gmail.com",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
