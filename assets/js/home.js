@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {   
-  const searchIcon = document.querySelector(".search-icon");   
+document.addEventListener("DOMContentLoaded", function () {
+  const searchIcon = document.querySelector(".search-icon");
   const searchBox = document.querySelector(".search-box");
   const searchInput = document.getElementById("searchInput");
 
@@ -7,43 +7,76 @@ document.addEventListener("DOMContentLoaded", function () {
   searchBox.style.display = "none";
 
   // Toggle search box on click
-  searchIcon.addEventListener("click", function (event) {       
-      event.stopPropagation(); 
-      searchBox.style.display = (searchBox.style.display === "none" || searchBox.style.display === "") ? "flex" : "none";
-      if (searchBox.style.display === "flex") {
-          searchInput.focus(); // Auto-focus the input field
-      }
+  searchIcon.addEventListener("click", function (event) {
+    event.stopPropagation();
+    searchBox.style.display = (searchBox.style.display === "none" || searchBox.style.display === "") ? "flex" : "none";
+    if (searchBox.style.display === "flex") {
+      searchInput.focus(); // Auto-focus the input field
+    }
   });
 
   // Hide search box when clicking outside
-  document.addEventListener("click", function (event) {       
-      if (!searchBox.contains(event.target) && !searchIcon.contains(event.target)) {           
-          searchBox.style.display = "none";       
-      }   
+  document.addEventListener("click", function (event) {
+    if (!searchBox.contains(event.target) && !searchIcon.contains(event.target)) {
+      searchBox.style.display = "none";
+    }
   });
 
   // Trigger search when Enter key is pressed
   searchInput.addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-          event.preventDefault(); 
-          performSearch(searchInput.value);
-      }
+    if (event.key === "Enter") {
+      event.preventDefault();
+      performSearch(searchInput.value);
+    }
   });
 
   function performSearch(query) {
-      if (query.trim() !== "") {
-          window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-      }
+    if (query.trim() !== "") {
+      window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+    }
+  };
+
+  //Navigation
+  function toggleMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileMenu.style.display =
+      mobileMenu.style.display === "flex" ? "none" : "flex";
   }
+
+
+
+
+
+  //swiper
+  var swiper = new Swiper(".swiper-container", {
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      768: {
+        autoplay: {
+          delay: 7000
+        }
+      }
+    }
+  });
+
+
+
 });
 
 
-//Navigation
-function toggleMenu() {
-  const mobileMenu = document.getElementById("mobileMenu");
-  mobileMenu.style.display =
-    mobileMenu.style.display === "flex" ? "none" : "flex";
-}
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile Menu Elements
@@ -153,30 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .forEach((menu) => menu.classList.remove("show"));
     }
   });
-});
-
-//swiper
-var swiper = new Swiper(".swiper-container", {
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  autoplay: {
-    delay: 7000,
-    disableOnInteraction: false
-  },
-  breakpoints: {
-    768: {
-      autoplay: {
-        delay: 7000
-      }
-    }
-  }
 });
 
 // Carousel Functionality
