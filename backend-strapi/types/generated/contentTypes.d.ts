@@ -373,6 +373,7 @@ export interface ApiProductCategoryProductCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'product_categories';
   info: {
+    description: '';
     displayName: 'Product Category';
     pluralName: 'product-categories';
     singularName: 'product-category';
@@ -390,7 +391,7 @@ export interface ApiProductCategoryProductCategory
       'api::product-category.product-category'
     > &
       Schema.Attribute.Private;
-    Products: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
@@ -421,7 +422,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     Product_category: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::product-category.product-category'
     >;
     publishedAt: Schema.Attribute.DateTime;
