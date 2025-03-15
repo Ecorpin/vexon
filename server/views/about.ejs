@@ -1,19 +1,8 @@
 <html lang="en">
 
 <!-- Header Section -->
+<%- include('header'); -%>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vexon Robotics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/7c20e5e399.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-</head>
 
 <head>
 	<meta charset="UTF-8">
@@ -30,925 +19,897 @@
 </head>
 
 <body>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <header>
-    <div class="top-header">
-    <a href="index.html">
-        <img src="images\Logo\WEBSITE LOGO_COLOR.png" alt="Vexon Robotics Logo" class="logo">
-    </a>
+	<header>
+		<div class="top-header">
+			<a href="index.html">
+				<img src="images\Logo\WEBSITE LOGO_COLOR.png" alt="Vexon Robotics Logo" class="logo">
+			</a>
 
-    <div class="header-icons">
-        <!-- Clickable Account Icon -->
-        <a href="account.html">
-          <i class="fa-regular fa-user"></i>
-        </a>
+			<div class="header-icons">
+				<!-- Clickable Account Icon -->
+				<a href="account.html">
+					<i class="fa-regular fa-user"></i>
+				</a>
 
-        <!-- Search Icon -->
-        <span class="search-icon">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </span>
+				<!-- Search Icon -->
+				<span class="search-icon">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</span>
 
-        <!-- Search Box -->
-        <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Search... ">
-        </div>
+				<!-- Search Box -->
+				<div class="search-box">
+					<input type="text" id="searchInput" placeholder="Search... ">
+				</div>
 
-        <!-- Mobile Menu Icon -->
-        <div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
-    </div>
-</div>
+				<!-- Mobile Menu Icon -->
+				<div class="mobile-menu-icon" onclick="toggleMenu()">☰</div>
+			</div>
+		</div>
 
 
-    <!-- Desktop Navigation Menu -->
-    <nav class="navbar">
-      <ul class="menu">
-        <!-- PRODUCTS -->
-        <li class="menu-item">
-          <a href="#">PRODUCTS </a>
-          <ul class="dropdown">
-            <h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Products</h1>
-            <li class="has-submenu">
-              <a>Cameras </a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>By Camera Type</h1>
-                  <a href="#">1D Line Scan  </a>
-                  <a href="#">2D Area Scan </a>
-                  <a href="#">Smart </a>
-                  <a href="#">Infrared </a>
-                  <a href="#">Microscopy </a>
-                  <a href="#">Stereo </a>
-                </li>
-                </div>
-                <div class="column">
-                <li>
-                  <h1>BY Interface </h1>
-                  <a href="#">GigE Cameras </a>
-                  <a href="#">PCIe Cameras </a>
-                  <a href="#">USB3 Cameras </a>
-                </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>                  
-                  <img src="images\Images\indcam.png" alt="Linea HS2">
-                  <div class="info">
-                    <showcaseh>Alpha1</showcaseh>
-                    <p>High-Speed Camera</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>Robots </a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>Educational</h1>
-                  <a href="#">Humanoid Robots</a>
-                  <a href="#">Programmable Robots</a>
-                  <a href="#">Robotic Arms</a>
-                  <a href="#">Modular Robots</a>
-                  <a href="#">Autonomous Mobile Robots (AMRs)</a>
-                </li>
-                </div>
-                <div class="column">
-                <li>
-                  <h1>Industrial </h1>
-                  <a href="#">Articulated Robots</a>
-                  <a href="#">SCARA Robots</a>
-                  <a href="#">Cartesian Robots (Gantry Robots)</a>
-                  <a href="#">Delta Robots (Parallel Robots)</a>
-                  <a href="#">Cylindrical Robots</a>
-                  <a href="#">Collaborative Robots (Cobots)</a>
-                  
-                </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>                  
-                  <img src="images/robotics/roboarm.png" alt="Linea HS2">
-                  <div class="info">
-                    <h5>βeta1</h5>
-                    <p>6-DOF Robotic Arm</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>Image Sensor </a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>All Image Sensors >></h1>
-                  <a href="#">1D Image Sensor </a>
-                  <a href="#">2D Image Sensor </a>
-                  <a href="#">3D Image Sensor </a>
-                  <a href="#">Custom CMOS Image Sensor </a>
-                </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>                  
-                  <img src="images\Images\vecteezy_image-sensor-inside-digital-camera-ccd-cmos-on-white_34924174.png" alt="Linea HS2">
-                  <div class="info">
-                    <h5>ΓGamma1</h5>
-                    <p>NIR sensor</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>3D Imaging </a>
-              <ul class="submenu">
-                <div class="column">
-                      <li>
-                        <h1>All 3D Imaging >></h1>
-                        <a href="#">Lazer Profilers </a>
-                        <a href="#">3D Image Sensors </a>
-                        <a href="#">Stereo Cameras </a>
-                      </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>                  
-                  <img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
-                  <div class="info">
-                    <h5>Alpha1</h5>
-                    <p>High-Speed Camera</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>Vision System </a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>View All Vision System >> </h1>
-                  <a href="#">Single Camera System </a>
-                  <a href="#">Multicamera Vision System </a>
-                  <a href="#"> Smart Camera vision system</a>
-                  <a href="#">People Counting & Tracking </a>
-                  <a href="#">Embedded Vision System </a>
-                </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>
-                  <img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
-                  <div class="info">
-                    <h5>Alpha1</h5>
-                    <p>High-Speed Camera</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>Softwares</a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>View All Softwares >></h1>
-                  <a href="#"> </a>
-                  <a href="#">Software Development Kits</a>
-                  <a href="#">Vision Application Softwares </a>
-                  <a href="#">Imaging Utilities </a>
-                  <a href="#">Drivers </a>
-                </li>
-                </div>
-                <div class="Showcase">
-                  <h8>NEW</h8>
-                  <img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
-                  <div class="info">
-                    <h5>Alpha1</h5>
-                    <p>High-Speed Camera</p>
-                    <a href="#" class="view-product">View Product</a>
-                  </div>
-                </div>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a>Custom & OEM </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <!--<h1> Custon & OEM</h1>-->
-                    <p>At Vexon Robotics, we specialize in delivering customized and OEM solutions tailored 
-                      to the unique needs of our clients in the fields of machine vision and robotics. Whether 
-                      it's developing high-precision vision inspection systems, advanced robotic automation, 
-                      or AI-driven industrial solutions, we work closely with businesses to create scalable, 
-                      efficient, and cutting-edge technologies. Our expertise ensures that every solution is 
-                      engineered for accuracy, performance, and seamless integration into existing workflows, 
-                      helping industries achieve higher efficiency, improved quality control, and smarter automation.</p>
-                      <a href="contact.html" class="view-product">Get In Touch</a>
-                </li>
-              </div>
-              </ul>
-            </li>
-          </ul>
-        </li>
+		<!-- Desktop Navigation Menu -->
+		<nav class="navbar">
+			<ul class="menu">
+				<!-- PRODUCTS -->
+				<li class="menu-item">
+					<a href="#">PRODUCTS </a>
+					<ul class="dropdown">
+						<h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Products</h1>
+						<li class="has-submenu">
+							<a>Cameras </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>By Camera Type</h1>
+										<a href="#">1D Line Scan </a>
+										<a href="#">2D Area Scan </a>
+										<a href="#">Smart </a>
+										<a href="#">Infrared </a>
+										<a href="#">Microscopy </a>
+										<a href="#">Stereo </a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>BY Interface </h1>
+										<a href="#">GigE Cameras </a>
+										<a href="#">PCIe Cameras </a>
+										<a href="#">USB3 Cameras </a>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images\Images\indcam.png" alt="Linea HS2">
+									<div class="info">
+										<showcaseh>Alpha1</showcaseh>
+										<p>High-Speed Camera</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>Robots </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Educational</h1>
+										<a href="#">Humanoid Robots</a>
+										<a href="#">Programmable Robots</a>
+										<a href="#">Robotic Arms</a>
+										<a href="#">Modular Robots</a>
+										<a href="#">Autonomous Mobile Robots (AMRs)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Industrial </h1>
+										<a href="#">Articulated Robots</a>
+										<a href="#">SCARA Robots</a>
+										<a href="#">Cartesian Robots (Gantry Robots)</a>
+										<a href="#">Delta Robots (Parallel Robots)</a>
+										<a href="#">Cylindrical Robots</a>
+										<a href="#">Collaborative Robots (Cobots)</a>
 
-        <!-- MARKETS & SOLUTIONS -->
-        <li class="menu-item">
-          <a>MARKETS & SOLUTIONS </a>
-          <ul class="dropdown"style=" transform: translateX(-290px);    left: 10%;">
-            <h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Solutions</h1>
-            <li class="has-submenu">
-              <a>Pharmaceuticals </a>
-              <ul class="submenu">
-                <div class="column">
-                <li>
-                  <h1>Vision Inspection</h1>
-                  <a>OCR, OCV (expiry and batch code verification)</a>  
-                  <a>Track & Trace (serialization and traceability)</a>  
-                  <a>Blister Inspection (tablet packaging defects)</a>  
-                  <a>Tablet Inspection (coating, color, shape)</a>  
-                  <a>Barcode, Data-code, Color Pharma-code (pharma-code scanning)</a>  
-                  <a>Rejection System (contaminated or defective medicine removal)</a>  
-                  <a>3D Inspection/Measurement (tablet thickness measurement)</a>  
-                </li>
-                </div>
-                <div class="column">
-                <li>
-                  <h1>Robotics </h1>
-                  <a>Robotic Pick & Place (automated sorting and placement of medicines)</a>  
-                  <a>Bottle & Vial Handling (robotic arms for filling and capping bottles)</a>  
-                  <a>Sterile Robot-Assisted Aseptic Processing (contamination-free drug production)</a>  
-                  <a>Microplate Handling (robotics for handling and testing drug samples in microplates)</a>  
-                  <a>Autonomous Mobile Robots (AMRs) (for transporting materials and samples)</a>  
-                  <a>AGVs (Automated Guided Vehicles) (for pharmaceutical warehouse logistics)</a>  
-                </li>
-                </div>
-              </ul>
-            </li>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images/robotics/roboarm.png" alt="Linea HS2">
+									<div class="info">
+										<h5>βeta1</h5>
+										<p>6-DOF Robotic Arm</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>Image Sensor </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>All Image Sensors >></h1>
+										<a href="#">1D Image Sensor </a>
+										<a href="#">2D Image Sensor </a>
+										<a href="#">3D Image Sensor </a>
+										<a href="#">Custom CMOS Image Sensor </a>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images\Images\vecteezy_image-sensor-inside-digital-camera-ccd-cmos-on-white_34924174.png"
+										alt="Linea HS2">
+									<div class="info">
+										<h5>ΓGamma1</h5>
+										<p>NIR sensor</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>3D Imaging </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>All 3D Imaging >></h1>
+										<a href="#">Lazer Profilers </a>
+										<a href="#">3D Image Sensors </a>
+										<a href="#">Stereo Cameras </a>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
+									<div class="info">
+										<h5>Alpha1</h5>
+										<p>High-Speed Camera</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>Vision System </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>View All Vision System >> </h1>
+										<a href="#">Single Camera System </a>
+										<a href="#">Multicamera Vision System </a>
+										<a href="#"> Smart Camera vision system</a>
+										<a href="#">People Counting & Tracking </a>
+										<a href="#">Embedded Vision System </a>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
+									<div class="info">
+										<h5>Alpha1</h5>
+										<p>High-Speed Camera</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>Softwares</a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>View All Softwares >></h1>
+										<a href="#"> </a>
+										<a href="#">Software Development Kits</a>
+										<a href="#">Vision Application Softwares </a>
+										<a href="#">Imaging Utilities </a>
+										<a href="#">Drivers </a>
+									</li>
+								</div>
+								<div class="Showcase">
+									<h8>NEW</h8>
+									<img src="images\OTHERS\CAMERAS.png" alt="Linea HS2">
+									<div class="info">
+										<h5>Alpha1</h5>
+										<p>High-Speed Camera</p>
+										<a href="#" class="view-product">View Product</a>
+									</div>
+								</div>
+							</ul>
+						</li>
+						<li class="has-submenu">
+							<a>Custom & OEM </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<!--<h1> Custon & OEM</h1>-->
+										<p>At Vexon Robotics, we specialize in delivering customized and OEM solutions
+											tailored
+											to the unique needs of our clients in the fields of machine vision and
+											robotics. Whether
+											it's developing high-precision vision inspection systems, advanced robotic
+											automation,
+											or AI-driven industrial solutions, we work closely with businesses to create
+											scalable,
+											efficient, and cutting-edge technologies. Our expertise ensures that every
+											solution is
+											engineered for accuracy, performance, and seamless integration into existing
+											workflows,
+											helping industries achieve higher efficiency, improved quality control, and
+											smarter automation.
+										</p>
+										<a href="contact.html" class="view-product">Get In Touch</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</li>
 
-
-
-            <li class="has-submenu">
-              <a>Semiconductor </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Alignment (chip placement)</a>  
-                    <a>Track & Trace (wafer ID tracking)</a>  
-                    <a>Pattern Match (defect identification)</a>  
-                    <a>Blob Detection (wafer defects)</a>  
-                    <a>3D Inspection/Measurement (chip thickness validation)</a>  
-                    <a>Measuring & Gauging (micron-level measurements)</a>  
-                    <a>Rejection System (defective chip removal)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Wafer Handling Robots (cleanroom automation for wafer transfer)</a>
-                    <a>Robotic Die Bonding (precision chip placement)</a>
-                    <a>Automated Wire Bonding (micro-connection formation)</a>
-                    <a>Pick & Place for Packaging (chip sorting and assembly)</a>
-                    <a>Collaborative Cleanroom Robots (human-assist manufacturing)</a> 
-                  </li>
-                  </div>
-              </ul>
-            </li>
-
-
-            <li class="has-submenu">
-              <a>Electronics </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Alignment (PCB component placement)</a>  
-                    <a>Track & Trace (chip and board tracking)</a>  
-                    <a>Pattern Match (chip quality validation)</a>  
-                    <a>Blob Detection (component defects)</a>  
-                    <a>Measuring & Gauging (circuit board accuracy)</a>  
-                    <a>Parts Identification (component verification)</a>  
-                    <a>Rejection System (faulty PCB rejection)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Robotic PCB Assembly (automated soldering and component placement)</a>
-                    <a>Robotic Inspection & Sorting (faulty component rejection)</a>
-                    <a>Selective Conformal Coating Robots (precise coating for circuit protection)</a>
-                    <a>Collaborative Robots (Cobots) (PCB handling and assembly assistance)</a>
-                    <a>Automated Depaneling (robotic PCB separation)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
+				<!-- MARKETS & SOLUTIONS -->
+				<li class="menu-item">
+					<a>MARKETS & SOLUTIONS </a>
+					<ul class="dropdown" style=" transform: translateX(-290px);    left: 10%;">
+						<h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Solutions</h1>
+						<li class="has-submenu">
+							<a>Pharmaceuticals </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>OCR, OCV (expiry and batch code verification)</a>
+										<a>Track & Trace (serialization and traceability)</a>
+										<a>Blister Inspection (tablet packaging defects)</a>
+										<a>Tablet Inspection (coating, color, shape)</a>
+										<a>Barcode, Data-code, Color Pharma-code (pharma-code scanning)</a>
+										<a>Rejection System (contaminated or defective medicine removal)</a>
+										<a>3D Inspection/Measurement (tablet thickness measurement)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Robotic Pick & Place (automated sorting and placement of medicines)</a>
+										<a>Bottle & Vial Handling (robotic arms for filling and capping bottles)</a>
+										<a>Sterile Robot-Assisted Aseptic Processing (contamination-free drug
+											production)</a>
+										<a>Microplate Handling (robotics for handling and testing drug samples in
+											microplates)</a>
+										<a>Autonomous Mobile Robots (AMRs) (for transporting materials and samples)</a>
+										<a>AGVs (Automated Guided Vehicles) (for pharmaceutical warehouse logistics)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
 
-            <li class="has-submenu">
-              <a>Automotive </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Locating (Guiding) </a>  
-                    <a>Surface Defects (paint scratches, dents)</a>  
-                    <a>Measuring & Gauging (gap and flush measurement)</a>  
-                    <a>3D Inspection/Measurement (curvature and part accuracy)</a>  
-                    <a>Numbering Inspection (engraved serial numbers)</a>  
-                    <a>Parts Identification (correct assembly verification)</a>  
-                    <a>Rejection System (defective part removal)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Positioning (robotic assembly guidance)</a>
-                    <a>Robotic Welding (automated spot and arc welding)</a>
-                    <a>Robotic Painting (uniform vehicle coating)</a>
-                    <a>Assembly Line Robotics (precision part placement)</a>
-                    <a>Automated Surface Polishing (paint defect rectification)</a>
-                    <a>Autonomous Guided Vehicles (AGVs) (component transport)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
+						<li class="has-submenu">
+							<a>Semiconductor </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Alignment (chip placement)</a>
+										<a>Track & Trace (wafer ID tracking)</a>
+										<a>Pattern Match (defect identification)</a>
+										<a>Blob Detection (wafer defects)</a>
+										<a>3D Inspection/Measurement (chip thickness validation)</a>
+										<a>Measuring & Gauging (micron-level measurements)</a>
+										<a>Rejection System (defective chip removal)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Wafer Handling Robots (cleanroom automation for wafer transfer)</a>
+										<a>Robotic Die Bonding (precision chip placement)</a>
+										<a>Automated Wire Bonding (micro-connection formation)</a>
+										<a>Pick & Place for Packaging (chip sorting and assembly)</a>
+										<a>Collaborative Cleanroom Robots (human-assist manufacturing)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+
+
+						<li class="has-submenu">
+							<a>Electronics </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Alignment (PCB component placement)</a>
+										<a>Track & Trace (chip and board tracking)</a>
+										<a>Pattern Match (chip quality validation)</a>
+										<a>Blob Detection (component defects)</a>
+										<a>Measuring & Gauging (circuit board accuracy)</a>
+										<a>Parts Identification (component verification)</a>
+										<a>Rejection System (faulty PCB rejection)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Robotic PCB Assembly (automated soldering and component placement)</a>
+										<a>Robotic Inspection & Sorting (faulty component rejection)</a>
+										<a>Selective Conformal Coating Robots (precise coating for circuit
+											protection)</a>
+										<a>Collaborative Robots (Cobots) (PCB handling and assembly assistance)</a>
+										<a>Automated Depaneling (robotic PCB separation)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
 
-            <li class="has-submenu">
-              <a>Food & Packeging </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>OCR, OCV (label verification)</a>  
-                    <a>seal Inspection (seal integrity)</a>  
-                    <a>Presence (Absence) Detection (missing product)</a>  
-                    <a>Track & Trace (supply chain monitoring)</a>  
-                    <a>Measuring & Gauging (portion accuracy)</a>  
-                    <a>Barcode, Data-code, Color Pharma-code (product identification)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Pick & Place Robots for Sorting (food handling automation)</a>
-                    <a>Robotic Palletizing & Depalletizing (carton stacking)</a>
-                    <a>Automated Packaging & Sealing (high-speed food wrapping)</a>
-                    <a>Autonomous Quality Inspection (defect removal in packaging)</a>
-                    <a>Cobot-Assisted Portioning (precision food serving)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
+						<li class="has-submenu">
+							<a>Automotive </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Locating (Guiding) </a>
+										<a>Surface Defects (paint scratches, dents)</a>
+										<a>Measuring & Gauging (gap and flush measurement)</a>
+										<a>3D Inspection/Measurement (curvature and part accuracy)</a>
+										<a>Numbering Inspection (engraved serial numbers)</a>
+										<a>Parts Identification (correct assembly verification)</a>
+										<a>Rejection System (defective part removal)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Positioning (robotic assembly guidance)</a>
+										<a>Robotic Welding (automated spot and arc welding)</a>
+										<a>Robotic Painting (uniform vehicle coating)</a>
+										<a>Assembly Line Robotics (precision part placement)</a>
+										<a>Automated Surface Polishing (paint defect rectification)</a>
+										<a>Autonomous Guided Vehicles (AGVs) (component transport)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
 
-            <li class="has-submenu">
-              <a>Textile & Apparel</a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Pattern Match (fabric design consistency)</a>  
-                    <a>Alignment (seam positioning)</a>  
-                    <a>Blob Detection (fabric defects, tears)</a>  
-                    <a>Surface Defects (stains, misprints)</a>  
-                    <a>Presence/Absence Detection (missing components)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Automated Fabric Cutting Robots (high-speed garment pattern cutting)</a>
-                    <a>Sewing & Stitching Automation (robotic precision sewing)</a>
-                    <a>Robotic Folding & Packing (garment packaging)</a>
-                    <a>Defect Detection & Sorting Robots (fabric quality assurance)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
-
-
-            <li class="has-submenu">
-              <a>Metal & Foundry </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Surface Defects (cracks, corrosion, welding errors)</a>  
-                    <a>Pattern Match (correct structure detection)</a>  
-                    <a>Measuring & Gauging (part thickness and accuracy)</a>  
-                    <a>Blob Detection (foreign particles or flaws)</a>  
-                    <a>Rejection System (faulty parts removal)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Robotic Welding & Brazing (precision metal joining)</a>
-                    <a>Robotic CNC Loading & Unloading (metal part machining automation)</a>
-                    <a>Robotic Sanding & Polishing (surface finishing)</a>
-                    <a>Autonomous Material Handling Robots (casting transport)</a>
-                    <a>Robotic Rejection System (defective part removal)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
-
-
-            <li class="has-submenu">
-              <a>Printing & Labeling </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>OCR, OCV (text verification)</a>  
-                    <a>Barcode, Data-code, Color Pharma-code (code validation)</a>  
-                    <a>Alignment (print registration)</a>  
-                    <a>Numbering Inspection (serial number verification)</a>  
-                    <a>Pattern Match (design consistency)</a>  
-                  </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Robotic Label Application (automated sticker placement)</a>
-                    <a>Automated Print Inspection & Sorting (faulty label rejection)</a>
-                    <a>Pick & Place Robots for Label Feeding (label roll handling)</a>
-                    <a>Robotic Serial Number Engraving (precision marking automation)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
-
-
-            <li class="has-submenu">
-              <a>Logistics & Supply Chain </a>
-              <ul class="submenu">
-                <div class="column">
-                  <li>
-                    <h1>Vision Inspection</h1>
-                    <a>Track & Trace (barcode and QR tracking)</a>  
-                    <a>Presence/Absence Detection (package verification)</a>  
-                    <a>Barcode, Data-code (sorting and inventory management)</a>  
-                    <a>Pattern Match (package alignment)</a>  
-                    <a>Rejection System (faulty package removal)</a>                     
-                    </li>
-                  </div>
-                  <div class="column">
-                  <li>
-                    <h1>Robotics </h1>
-                    <a>Autonomous Mobile Robots (AMRs) (warehouse inventory transport)</a>
-                    <a>Robotic Parcel Sorting (high-speed package classification)</a>
-                    <a>Automated Palletizing & Depalletizing (warehouse efficiency)</a>
-                    <a>Cobot-Assisted Loading & Unloading (automated logistics)</a>
-                  </li>
-                  </div>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        
-        <!-- COMPANY -->
-        <li class="menu-item">
-          <a>COMPANY </a>
-          <ul class="dropdown" style="height: auto;">
-            <h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Company</h1>
-            <li class="has-submenu" >
-              <a href="about.html">About Vexon Robotics </a>
-            </li>
-            <li class="has-submenu">
-              <a href="news.html">News </a>
-            </li>
-            <li class="has-submenu">
-              <a href="events.html">Events </a>
-            </li>
-            <li class="has-submenu">
-              <a href="careers.html">Careers </a>
-            </li>
-            <li class="has-submenu">
-              <a href="qc.html">Quality & Certifications </a>
-            </li>
-          </ul>
-        </li>
-        <!-- CONTACT -->
-        <li class="menu-item"><a href="#">CONTACT</a>
-          <ul class="dropdown" style="height: auto;">
-            <h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Contact</h1>
-            <li class="has-submenu">
-              <a href="contact.html">Contact Us </a>
-            </li>
-            <li class="has-submenu">
-              <a href="establishments.html">Establishments</a>
-            </li>
-            </ui>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenu">
-      <div class="mobile-menu">
-        <div class="mobile-logo"><a href="index.html"><img src="images/Logo/mobile-logo.png"></a></div>
-        <div class="close-menu" onclick="toggleMenu()">✖</div>
-        <ul>
-            <!-- Dropdown for MY ACCOUNT -->
-                    <li class="has-submenu">
-                      <a href="#">ACCOUNT</a> 
-                      <span class="expand" onclick="toggleSubMenu()">+</span>
-                      <ul class="mobile-submenu"style="padding-top: 10px;">
-                        <li><a href="#">My Profile</a></li>
-                        <li><a href="#">Cart</a></li>
-                        <li><a href="#">Orders</a></li>
-                        <li><a href="#">Addresses</a></li>
-                      </ul>
-                    </li>
-            <!-- Dropdown for PRODUCTS -->
-                    <li class="has-submenu">
-                      <a href="#">PRODUCTS</a> 
-                      <span class="expand" onclick="toggleSubMenu()">+</span>
-                      <ul class="mobile-submenu"style="padding-top: 10px;">
-                        <li><a href="#">Cameras</a></li>
-                        <li><a href="#">Robots</a></li>
-                        <li><a href="#">Vision Systems</a></li>
-                        <li><a href="#">Softwares</a></li>
-                      </ul>
-                    </li>
-                  
-            
-            <!-- Dropdown for Markets & Solutions -->
-                    <li class="has-submenu">
-                      <a href="#">MARKETS & SOLUTIONS</a> 
-                      <span class="expand" onclick="toggleSubMenu()">+</span>
-                      <ul class="mobile-submenu"style="padding-top: 10px;">
-                        <li><a href="#">Pharmaceuticals</a></li>
-                        <li><a href="#">Semiconductor</a></li>
-                        <li><a href="#">Electronics</a></li>
-                        <li><a href="#">Automotive</a></li>
-                        <li><a href="#">Food & Packeging</a></li>
-                        <li><a href="#">Textile & Apparel</a></li>
-                        <li><a href="#">Metal & Foundry</a></li>
-                        <li><a href="#">Printing & Labeling</a></li>
-                        <li><a href="#">Logistics & Supply Chain</a></li>
-                      </ul>
-                    </li>
-            <!-- Dropdown for COMPANY -->
-                    <li class="has-submenu">
-                      <a href="about.html">COMPANY</a> 
-                      <span class="expand" onclick="toggleSubMenu()">+</span>
-                      <ul class="mobile-submenu"style="padding-top: 10px;">
-                        <li><a href="about.html">About Vexon Robotics</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="qc.html">Quality & Certifications</a></li>
-                      </ul>
-                    </li>
-            <!-- Dropdown for CONTACT -->
-                    <li class="has-submenu">
-                      <a href="contact.html">CONTACT</a> 
-                      <span class="expand" onclick="toggleSubMenu()">+</span>
-                      <ul class="mobile-submenu"style="padding-top: 10px;">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="establishments.html">Establishments</a></li>
-                      </ul>
-                    </li>
-        </ul>
-        <div class="socials" style="padding-top: 50px;">
-          <a href="#"><i class="fa-brands fa-linkedin fa-2xl"style="color: #38BFCD;"></i></a>
-          <a href="#"><i class="fa-brands fa-whatsapp fa-2xl"style="color: #38BFCD;"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter fa-2xl"style="color: #38BFCD;"></i></a>    
-          <a href="#"><i class="fa-brands fa-youtube fa-2xl"style="color: #38BFCD;"></i></a>
-      </div>
-    </div>
-    
-  </header>
+						<li class="has-submenu">
+							<a>Food & Packeging </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>OCR, OCV (label verification)</a>
+										<a>seal Inspection (seal integrity)</a>
+										<a>Presence (Absence) Detection (missing product)</a>
+										<a>Track & Trace (supply chain monitoring)</a>
+										<a>Measuring & Gauging (portion accuracy)</a>
+										<a>Barcode, Data-code, Color Pharma-code (product identification)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Pick & Place Robots for Sorting (food handling automation)</a>
+										<a>Robotic Palletizing & Depalletizing (carton stacking)</a>
+										<a>Automated Packaging & Sealing (high-speed food wrapping)</a>
+										<a>Autonomous Quality Inspection (defect removal in packaging)</a>
+										<a>Cobot-Assisted Portioning (precision food serving)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
 
-<main>  
-  <!--Section 1-->
-      <!-- Gradient Section -->
-      <section class="gradient-section" id="gradientSection">
-        <!-- Particle Effect Canvas -->
-        <canvas class="particle-canvas" id="particleCanvas"></canvas>
-  
-        <!-- Content -->
-        <div class="gradient-content">
-          <h>At Vexon Robotics</h>
-          <p>We are Innovating the Future with Robotics and Machine Vision</p>
-        </div>
-    </section>
-
-  <!--Section 2-->
-<div class="About-section">
-    <div class="left-content">
-        <p> At Vexon Robotics, we are at the forefront of technological innovation, combining robotics, machine vision, and AI-driven inspection solutions to revolutionize industries worldwide. Our commitment to automation excellence ensures that businesses achieve unmatched precision, efficiency, and reliability in their operations.</p><br>
-        <p>
-          Our Expertise:</p>
-          <p> ✅ Advanced Vision Inspection Systems – Detecting even the finest defects with unparalleled accuracy.</p>
-          <p> ✅ Intelligent Robotics Solutions – Enhancing production lines with smart automation.</p>
-          <p> ✅ AI-Powered Machine Vision – Enabling high-speed, real-time analysis for quality control.</p>
-          <p> ✅ Custom Automation Systems – Tailored solutions to optimize performance across industries.</p>
-          <p> ✅ Deep Learning & Edge Computing – Ensuring faster, smarter, and more adaptive decision-making.</p>
-        </p><br>  
-        <p>  We specialize in developing state-of-the-art solutions that help businesses transition into the future of smart manufacturing, logistics, healthcare, and industrial automation. Our advanced AI-driven inspection systems detect microscopic defects, improve product quality, and eliminate inefficiencies, making manufacturing processes more accurate and cost-effective than ever before. </p>
-
-        <p>By pushing the boundaries of AI-powered automation, smart vision technology, and high-speed inspection systems, Vexon Robotics is shaping the future—one intelligent solution at a time. Whether you’re in automotive, electronics, pharmaceuticals, packaging, or aerospace, our mission is to empower your business with the tools necessary to thrive in Industry 4.0 and beyond.</p><br> 
-    </div> 
-    <div class="right-content">
-        <img src="images\Images\Building.jpg" alt="Instagram">
-    </div>  
-  </div>  
+						<li class="has-submenu">
+							<a>Textile & Apparel</a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Pattern Match (fabric design consistency)</a>
+										<a>Alignment (seam positioning)</a>
+										<a>Blob Detection (fabric defects, tears)</a>
+										<a>Surface Defects (stains, misprints)</a>
+										<a>Presence/Absence Detection (missing components)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Automated Fabric Cutting Robots (high-speed garment pattern cutting)</a>
+										<a>Sewing & Stitching Automation (robotic precision sewing)</a>
+										<a>Robotic Folding & Packing (garment packaging)</a>
+										<a>Defect Detection & Sorting Robots (fabric quality assurance)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
- <!--section 3-->
- <section>
-  <h2>Industries We Serve:</h2>
-
- <div class="industry-container">
-  <!-- Featured industry -->
-  <div class="industry-card">
-      <img src="images\Images\automotive.jpg"alt="industry">
-      <div class="industry-content">
-          <h3>Automotive</h3>
-          <p>Precision inspection and automation for assembly lines....</p>
-          <b href="#">Read More</b>
-      </div>
-  </div>
-  <div class="industry-card">
-    <img src="images\Images\pharma.jpg" alt="industry">
-    <div class="industry-content">
-        <h3>Pharmaceuticals & Healthcare</h3>
-        <p>Ensuring 100% product integrity and compliance....</p>
-        <b href="#">Read More</b>
-    </div>
-</div>
-<div class="industry-card">
-  <img src="images\Images\electronics.jpg" alt="industry">
-  <div class="industry-content">
-      <h3>Electronics & Semiconductors</h3>
-      <p>Detecting micro-defects in circuit boards and chips.....</p>
-      <b href="#">Read More</b>
-  </div>
-</div>
-
-<div class="industry-card">
-<img src="images\Images\food.jpg" alt="industry">
-<div class="industry-content">
-    <h3>Food & Beverage</h3>
-    <p>High-speed quality control and contamination detection....</p>
-    <b href="#">Read More</b>
-</div>
-</div>
-<div class="industry-card">
-<img src="images\Images\defence1.jpeg" alt="industry">
-<div class="industry-content">
-  <h3>Aerospace & Defense</h3>
-  <p>Advanced vision systems for high-precision applications...</p>
-  <b href="#">Read More</b>
-</div>
-</div>
-<div class="industry-card">
-<img src="images\Images\logistic.jpg" alt="industry">
-<div class="industry-content">
-  <h3>Packaging & Logistics</h3>
-  <p>Smart tracking, labeling, and defect detection solutions....</p>
-  <b href="#">Read More</b>
-</div>
-</div>
-</div>
-</section>
-         
-<!--section 4-->
-<section>
-  <h2>More About Us</h2>
-<div class= "properties">
-  <div class="columns1">
-    <div class="column1">
-      <img src="images\icons\Mission.png" alt="mission">
-        <h>Our Mission</h>
-      <g>revolutionizes industries with robotics, machine vision, and AI-driven inspection solutions, empowering businesses with intelligent automation for precision, efficiency, and innovation in industrial and scientific applications.</g>
-    </div>
-      <div class="column1">
-      <img src="images\icons\VISION.png" alt="vision">
-      <h>Our Vision</h>
-      <g>We envisions a future where intelligent automation and machine vision enhance industrial productivity and quality, striving to lead globally in robotics and vision inspection solutions for a smarter, more efficient world.</g>
-    </div>
-      <div class="column1">
-      <img src="images\icons\Values.png" alt="value">
-      <h>Our Value</h>
-      <g>🔹 Innovation – Advancing automation and vision solutions through cutting-edge technology.</g>
-      <g>🔹 Precision – Delivering unmatched accuracy and reliability in every application.</g>
-      <g>🔹 Integrity – Upholding transparency, ethics, and trust in all partnerships.</g>
-    </div>
-      <div class="column1">
-      <img src="images\icons\Colture.png" alt="culture">
-      <h>Our Culture</h>
-      <g>Wefosters a culture of innovation, curiosity, and excellence, where teamwork and continuous learning drive impactful solutions. We push technological boundaries to shape the future of intelligent automation.</g>
-    </div>
-    </div>
-    </div>
-  </section>
+						<li class="has-submenu">
+							<a>Metal & Foundry </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Surface Defects (cracks, corrosion, welding errors)</a>
+										<a>Pattern Match (correct structure detection)</a>
+										<a>Measuring & Gauging (part thickness and accuracy)</a>
+										<a>Blob Detection (foreign particles or flaws)</a>
+										<a>Rejection System (faulty parts removal)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Robotic Welding & Brazing (precision metal joining)</a>
+										<a>Robotic CNC Loading & Unloading (metal part machining automation)</a>
+										<a>Robotic Sanding & Polishing (surface finishing)</a>
+										<a>Autonomous Material Handling Robots (casting transport)</a>
+										<a>Robotic Rejection System (defective part removal)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
-  <!--Section 5-->
-  <section>
-    <h2>Our Team</h2>
-    <p>Meet the dedicated team of experts behind Vexon Robotics</p>
-    <div class="team">
-      <div class="team-member">
-        <img src="images/Images/varun.png" alt="Team Member">
-        <h3>Sarwadaman Singh</h3>
-        <p>CEO</p>
-      </div>
-      <div class="team-member">
-        <img src="http://placehold.it/150x150" alt="Team Member">
-        <h3>Jane Doe</h3>
-        <p>COO</p>
-      </div>
-      <div class="team-member">
-        <img src="http://placehold.it/150x150" alt="Team Member">
-        <h3>John Smith</h3>
-        <p>CTO</p>
-        </div>
-      <div class="team-member">
-        <img src="http://placehold.it/150x150" alt="Team Member">
-        <h3>Jane Smith</h3>
-        <p>CMO</p>
-      </div>
-      <div class="team-member">
-        <img src="http://placehold.it/150x150" alt="Team Member">
-        <h3>John Doe</h3>
-        <p>CEO</p>
-      </div>
-      <div class="team-member">
-        <img src="http://placehold.it/150x150" alt="Team Member">
-        <h3>Jane Doe</h3>
-        <p>COO</p>
-      </div>
-    </div>
-  </section>
-  <!--Section 6-->
-  <section1>
-    <h2>Our Partners</h2>
-    <p>Discover the industry-leading partners who help us drive innovation</p>
-    <div class="carousel-wrap">
-    <div class="owl-carousel">
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-    </div>
-  </div>
-</section1>
-  <!--Section 7-->
-  <section1>
-    <h2>Our Clients</h2>
-    <p>Discover the industry-leading partners who help us drive innovation</p>
-    <div class="carousel-wrap">
-    <div class="owl-carousel">
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-      <div class="item"><img src="images\others\CAMERAS.png"></div>
-    </div>
-  </div>
-</section1>
-  <!--Section 8-->
-  <section id="contact">
-    <div class="container">
-        <h2>Get in Touch</h2>
-        <p>Have a question or need a robotics solution? Reach out to us!</p>
-
-        <div class="contact-wrapper">
-            <!-- Contact Form -->
-            <form id="contact-form" name="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-
-            <!-- Contact Info & Social Links -->
-            <div class="contact-info">
-                <h6>Contact Details</h6>
-                <p><strong>Email:</strong> info@vexonrobotics.com</p>
-                <p><strong>Phone:</strong> +91 9907805646</p>
+						<li class="has-submenu">
+							<a>Printing & Labeling </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>OCR, OCV (text verification)</a>
+										<a>Barcode, Data-code, Color Pharma-code (code validation)</a>
+										<a>Alignment (print registration)</a>
+										<a>Numbering Inspection (serial number verification)</a>
+										<a>Pattern Match (design consistency)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Robotic Label Application (automated sticker placement)</a>
+										<a>Automated Print Inspection & Sorting (faulty label rejection)</a>
+										<a>Pick & Place Robots for Label Feeding (label roll handling)</a>
+										<a>Robotic Serial Number Engraving (precision marking automation)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
 
 
-                <!-- Google Map -->
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_LINK" 
-                    width="100%" height="200" style="border:0;" allowfullscreen="">
-                </iframe>
+						<li class="has-submenu">
+							<a>Logistics & Supply Chain </a>
+							<ul class="submenu">
+								<div class="column">
+									<li>
+										<h1>Vision Inspection</h1>
+										<a>Track & Trace (barcode and QR tracking)</a>
+										<a>Presence/Absence Detection (package verification)</a>
+										<a>Barcode, Data-code (sorting and inventory management)</a>
+										<a>Pattern Match (package alignment)</a>
+										<a>Rejection System (faulty package removal)</a>
+									</li>
+								</div>
+								<div class="column">
+									<li>
+										<h1>Robotics </h1>
+										<a>Autonomous Mobile Robots (AMRs) (warehouse inventory transport)</a>
+										<a>Robotic Parcel Sorting (high-speed package classification)</a>
+										<a>Automated Palletizing & Depalletizing (warehouse efficiency)</a>
+										<a>Cobot-Assisted Loading & Unloading (automated logistics)</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+					</ul>
+				</li>
 
-               
-                <!-- Social Media Links -->
-                <div class="social-links" style = "align-items: center;">
-                <a href="#"><img src="https://i.ibb.co/cKjZ48nh/icons8-meta-50.png" alt="Facebook"></a>
-                <a href="#"><img src="https://i.ibb.co/x8wxjTtq/icons8-x-50.png" alt="Twitter"></a>
-                <a href="#"><img src="https://i.ibb.co/XZHRkwpv/icons8-youtube-50.png" alt="LinkedIn"></a>
-              </div>
-            </div>
-        </div>
-    </div>
-</section>
+				<!-- COMPANY -->
+				<li class="menu-item">
+					<a>COMPANY </a>
+					<ul class="dropdown" style="height: auto;">
+						<h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Company</h1>
+						<li class="has-submenu">
+							<a href="about.html">About Vexon Robotics </a>
+						</li>
+						<li class="has-submenu">
+							<a href="news.html">News </a>
+						</li>
+						<li class="has-submenu">
+							<a href="events.html">Events </a>
+						</li>
+						<li class="has-submenu">
+							<a href="careers.html">Careers </a>
+						</li>
+						<li class="has-submenu">
+							<a href="qc.html">Quality & Certifications </a>
+						</li>
+					</ul>
+				</li>
+				<!-- CONTACT -->
+				<li class="menu-item"><a href="#">CONTACT</a>
+					<ul class="dropdown" style="height: auto;">
+						<h1 style="text-align:left; padding-bottom: 10px;padding-left: 10px;">Contact</h1>
+						<li class="has-submenu">
+							<a href="contact.html">Contact Us </a>
+						</li>
+						<li class="has-submenu">
+							<a href="establishments.html">Establishments</a>
+						</li>
+						</ui>
+				</li>
+			</ul>
+		</nav>
 
-  <!--Section 7-->
-  <!--Section 8-->
-  <!--Section 9-->
-  </main> 
-            <!-- jQuery (Required for Owl Carousel) -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Mobile Menu -->
+		<div class="mobile-menu-overlay" id="mobileMenu">
+			<div class="mobile-menu">
+				<div class="mobile-logo"><a href="index.html"><img src="images/Logo/mobile-logo.png"></a></div>
+				<div class="close-menu" onclick="toggleMenu()">✖</div>
+				<ul>
+					<!-- Dropdown for MY ACCOUNT -->
+					<li class="has-submenu">
+						<a href="#">ACCOUNT</a>
+						<span class="expand" onclick="toggleSubMenu()">+</span>
+						<ul class="mobile-submenu" style="padding-top: 10px;">
+							<li><a href="#">My Profile</a></li>
+							<li><a href="#">Cart</a></li>
+							<li><a href="#">Orders</a></li>
+							<li><a href="#">Addresses</a></li>
+						</ul>
+					</li>
+					<!-- Dropdown for PRODUCTS -->
+					<li class="has-submenu">
+						<a href="#">PRODUCTS</a>
+						<span class="expand" onclick="toggleSubMenu()">+</span>
+						<ul class="mobile-submenu" style="padding-top: 10px;">
+							<li><a href="#">Cameras</a></li>
+							<li><a href="#">Robots</a></li>
+							<li><a href="#">Vision Systems</a></li>
+							<li><a href="#">Softwares</a></li>
+						</ul>
+					</li>
 
-            <!-- Owl Carousel JS -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+					<!-- Dropdown for Markets & Solutions -->
+					<li class="has-submenu">
+						<a href="#">MARKETS & SOLUTIONS</a>
+						<span class="expand" onclick="toggleSubMenu()">+</span>
+						<ul class="mobile-submenu" style="padding-top: 10px;">
+							<li><a href="#">Pharmaceuticals</a></li>
+							<li><a href="#">Semiconductor</a></li>
+							<li><a href="#">Electronics</a></li>
+							<li><a href="#">Automotive</a></li>
+							<li><a href="#">Food & Packeging</a></li>
+							<li><a href="#">Textile & Apparel</a></li>
+							<li><a href="#">Metal & Foundry</a></li>
+							<li><a href="#">Printing & Labeling</a></li>
+							<li><a href="#">Logistics & Supply Chain</a></li>
+						</ul>
+					</li>
+					<!-- Dropdown for COMPANY -->
+					<li class="has-submenu">
+						<a href="about.html">COMPANY</a>
+						<span class="expand" onclick="toggleSubMenu()">+</span>
+						<ul class="mobile-submenu" style="padding-top: 10px;">
+							<li><a href="about.html">About Vexon Robotics</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="events.html">Events</a></li>
+							<li><a href="careers.html">Careers</a></li>
+							<li><a href="qc.html">Quality & Certifications</a></li>
+						</ul>
+					</li>
+					<!-- Dropdown for CONTACT -->
+					<li class="has-submenu">
+						<a href="contact.html">CONTACT</a>
+						<span class="expand" onclick="toggleSubMenu()">+</span>
+						<ul class="mobile-submenu" style="padding-top: 10px;">
+							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="establishments.html">Establishments</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="socials" style="padding-top: 50px;">
+					<a href="#"><i class="fa-brands fa-linkedin fa-2xl" style="color: #38BFCD;"></i></a>
+					<a href="#"><i class="fa-brands fa-whatsapp fa-2xl" style="color: #38BFCD;"></i></a>
+					<a href="#"><i class="fa-brands fa-x-twitter fa-2xl" style="color: #38BFCD;"></i></a>
+					<a href="#"><i class="fa-brands fa-youtube fa-2xl" style="color: #38BFCD;"></i></a>
+				</div>
+			</div>
+
+	</header>
+
+	<main>
+		<!--Section 1-->
+		<!-- Gradient Section -->
+		<section class="gradient-section" id="gradientSection">
+			<!-- Particle Effect Canvas -->
+			<canvas class="particle-canvas" id="particleCanvas"></canvas>
+
+			<!-- Content -->
+			<div class="gradient-content">
+				<h>At Vexon Robotics</h>
+				<p>We are Innovating the Future with Robotics and Machine Vision</p>
+			</div>
+		</section>
+
+		<!--Section 2-->
+		<div class="About-section">
+			<div class="left-content">
+				<p> At Vexon Robotics, we are at the forefront of technological innovation, combining robotics, machine
+					vision,
+					and AI-driven inspection solutions to revolutionize industries worldwide. Our commitment to
+					automation
+					excellence ensures that businesses achieve unmatched precision, efficiency, and reliability in their
+					operations.</p><br>
+				<p>
+					Our Expertise:</p>
+				<p> ✅ Advanced Vision Inspection Systems – Detecting even the finest defects with unparalleled accuracy.
+				</p>
+				<p> ✅ Intelligent Robotics Solutions – Enhancing production lines with smart automation.</p>
+				<p> ✅ AI-Powered Machine Vision – Enabling high-speed, real-time analysis for quality control.</p>
+				<p> ✅ Custom Automation Systems – Tailored solutions to optimize performance across industries.</p>
+				<p> ✅ Deep Learning & Edge Computing – Ensuring faster, smarter, and more adaptive decision-making.</p>
+				</p><br>
+				<p> We specialize in developing state-of-the-art solutions that help businesses transition into the
+					future of
+					smart manufacturing, logistics, healthcare, and industrial automation. Our advanced AI-driven
+					inspection
+					systems detect microscopic defects, improve product quality, and eliminate inefficiencies, making
+					manufacturing processes more accurate and cost-effective than ever before. </p>
+
+				<p>By pushing the boundaries of AI-powered automation, smart vision technology, and high-speed
+					inspection
+					systems, Vexon Robotics is shaping the future—one intelligent solution at a time. Whether you’re in
+					automotive, electronics, pharmaceuticals, packaging, or aerospace, our mission is to empower your
+					business
+					with the tools necessary to thrive in Industry 4.0 and beyond.</p><br>
+			</div>
+			<div class="right-content">
+				<img src="images\Images\Building.jpg" alt="Instagram">
+			</div>
+		</div>
+
+
+		<!--section 3-->
+		<section>
+			<h2>Industries We Serve:</h2>
+
+			<div class="industry-container">
+				<!-- Featured industry -->
+				<div class="industry-card">
+					<img src="images\Images\automotive.jpg" alt="industry">
+					<div class="industry-content">
+						<h3>Automotive</h3>
+						<p>Precision inspection and automation for assembly lines....</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+				<div class="industry-card">
+					<img src="images\Images\pharma.jpg" alt="industry">
+					<div class="industry-content">
+						<h3>Pharmaceuticals & Healthcare</h3>
+						<p>Ensuring 100% product integrity and compliance....</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+				<div class="industry-card">
+					<img src="images\Images\electronics.jpg" alt="industry">
+					<div class="industry-content">
+						<h3>Electronics & Semiconductors</h3>
+						<p>Detecting micro-defects in circuit boards and chips.....</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+
+				<div class="industry-card">
+					<img src="images\Images\food.jpg" alt="industry">
+					<div class="industry-content">
+						<h3>Food & Beverage</h3>
+						<p>High-speed quality control and contamination detection....</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+				<div class="industry-card">
+					<img src="images\Images\defence1.jpeg" alt="industry">
+					<div class="industry-content">
+						<h3>Aerospace & Defense</h3>
+						<p>Advanced vision systems for high-precision applications...</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+				<div class="industry-card">
+					<img src="images\Images\logistic.jpg" alt="industry">
+					<div class="industry-content">
+						<h3>Packaging & Logistics</h3>
+						<p>Smart tracking, labeling, and defect detection solutions....</p>
+						<b href="#">Read More</b>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--section 4-->
+		<section>
+			<h2>More About Us</h2>
+			<div class="properties">
+				<div class="columns1">
+					<div class="column1">
+						<img src="images\icons\Mission.png" alt="mission">
+						<h>Our Mission</h>
+						<g>revolutionizes industries with robotics, machine vision, and AI-driven inspection solutions,
+							empowering
+							businesses with intelligent automation for precision, efficiency, and innovation in
+							industrial and
+							scientific applications.</g>
+					</div>
+					<div class="column1">
+						<img src="images\icons\VISION.png" alt="vision">
+						<h>Our Vision</h>
+						<g>We envisions a future where intelligent automation and machine vision enhance industrial
+							productivity and
+							quality, striving to lead globally in robotics and vision inspection solutions for a
+							smarter, more
+							efficient world.</g>
+					</div>
+					<div class="column1">
+						<img src="images\icons\Values.png" alt="value">
+						<h>Our Value</h>
+						<g>🔹 Innovation – Advancing automation and vision solutions through cutting-edge technology.
+						</g>
+						<g>🔹 Precision – Delivering unmatched accuracy and reliability in every application.</g>
+						<g>🔹 Integrity – Upholding transparency, ethics, and trust in all partnerships.</g>
+					</div>
+					<div class="column1">
+						<img src="images\icons\Colture.png" alt="culture">
+						<h>Our Culture</h>
+						<g>Wefosters a culture of innovation, curiosity, and excellence, where teamwork and continuous
+							learning
+							drive impactful solutions. We push technological boundaries to shape the future of
+							intelligent automation.
+						</g>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!--Section 5-->
+		<section>
+			<h2>Our Team</h2>
+			<p>Meet the dedicated team of experts behind Vexon Robotics</p>
+			<div class="team">
+				<div class="team-member">
+					<img src="images/Images/varun.png" alt="Team Member">
+					<h3>Sarwadaman Singh</h3>
+					<p>CEO</p>
+				</div>
+				<div class="team-member">
+					<img src="http://placehold.it/150x150" alt="Team Member">
+					<h3>Jane Doe</h3>
+					<p>COO</p>
+				</div>
+				<div class="team-member">
+					<img src="http://placehold.it/150x150" alt="Team Member">
+					<h3>John Smith</h3>
+					<p>CTO</p>
+				</div>
+				<div class="team-member">
+					<img src="http://placehold.it/150x150" alt="Team Member">
+					<h3>Jane Smith</h3>
+					<p>CMO</p>
+				</div>
+				<div class="team-member">
+					<img src="http://placehold.it/150x150" alt="Team Member">
+					<h3>John Doe</h3>
+					<p>CEO</p>
+				</div>
+				<div class="team-member">
+					<img src="http://placehold.it/150x150" alt="Team Member">
+					<h3>Jane Doe</h3>
+					<p>COO</p>
+				</div>
+			</div>
+		</section>
+		<!--Section 6-->
+		<section1>
+			<h2>Our Partners</h2>
+			<p>Discover the industry-leading partners who help us drive innovation</p>
+			<div class="carousel-wrap">
+				<div class="owl-carousel">
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+				</div>
+			</div>
+		</section1>
+		<!--Section 7-->
+		<section1>
+			<h2>Our Clients</h2>
+			<p>Discover the industry-leading partners who help us drive innovation</p>
+			<div class="carousel-wrap">
+				<div class="owl-carousel">
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+					<div class="item"><img src="images\others\CAMERAS.png"></div>
+				</div>
+			</div>
+		</section1>
+		<!--Section 8-->
+		<section id="contact">
+			<div class="container">
+				<h2>Get in Touch</h2>
+				<p>Have a question or need a robotics solution? Reach out to us!</p>
+
+				<div class="contact-wrapper">
+					<!-- Contact Form -->
+					<form id="contact-form" name="contact-form">
+						<input type="text" name="name" placeholder="Your Name" required>
+						<input type="email" name="email" placeholder="Your Email" required>
+						<textarea name="message" placeholder="Your Message" required></textarea>
+						<button type="submit">Send Message</button>
+					</form>
+
+					<!-- Contact Info & Social Links -->
+					<div class="contact-info">
+						<h6>Contact Details</h6>
+						<p><strong>Email:</strong> info@vexonrobotics.com</p>
+						<p><strong>Phone:</strong> +91 9907805646</p>
+
+
+						<!-- Google Map -->
+						<iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_EMBED_LINK" width="100%" height="200"
+							style="border:0;" allowfullscreen="">
+						</iframe>
+
+
+						<!-- Social Media Links -->
+						<div class="social-links" style="align-items: center;">
+							<a href="#"><img src="https://i.ibb.co/cKjZ48nh/icons8-meta-50.png" alt="Facebook"></a>
+							<a href="#"><img src="https://i.ibb.co/x8wxjTtq/icons8-x-50.png" alt="Twitter"></a>
+							<a href="#"><img src="https://i.ibb.co/XZHRkwpv/icons8-youtube-50.png" alt="LinkedIn"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--Section 7-->
+		<!--Section 8-->
+		<!--Section 9-->
+	</main>
 </body>
 
 
+<link rel="stylesheet" href="assets\css\global.css">
+<link rel="stylesheet" href="assets\css\about.css">
+<script src="assets\js\about.js"></script>
+<script src="assets\js\global.js"></script>
 
 
-
-
-  <!-- Updated Footer HTML -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-left">
-        <img src="images\Logo\Footer_Logo.png" alt="Vexon Robotics Logo" class="footer-logo">
-  
-        <p><strong>LinkedIn:</strong> <a href="#">Industrial</a> | <a href="#">Scientific</a></p>
-        <p><strong>X:</strong> <a href="#">Industrial</a> | <a href="#">Scientific</a></p>
-      </div>
-  
-      <div class="footer-right">
-        <div class="footer-column">
-          <h4>PRODUCTS</h4>
-          <ul>
-            <li><a href="#">Cameras & Sensors</a></li>
-            <li><a href="#">Robots</a></li>
-            <li><a href="#">3D Imaging</a></li>
-            <li><a href="#">Vision Systems</a></li>
-            <li><a href="#">Softwares</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>COMPANY</h4>
-          <ul>
-            <li><a href="about.html">About Vexon Robotics</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="#">Quality & Certifications</a></li>
-  
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>SUPPORT & SERVICE</h4>
-          <ul>
-            <li><a href="contact.html">Support Center</a></li>
-            <li><a href="#">Documentation & Drawings</a></li>
-            <li><a href="#">Software & Firmware Downloads</a></li>
-            <li><a href="#">Software Registration</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  
-    <div class="footer-rights">
-      <p>2025 © Vexon Robotics, All rights reserved.</p>
-    </div>
-  
-    <div class="footer-bottom">
-      <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Cookie Policy</a> | <a href="#">Website Terms of Use</a>
-    </div>
-  </footer>
-
-  <!--Links-->
-  <link rel="stylesheet" href="assets\css\global.css">
-  <link rel="stylesheet" href="assets\css\about.css">
-  <script src="assets\js\about.js"></script>
-  <script src="assets\js\global.js"></script>
-
-  
 </html>
