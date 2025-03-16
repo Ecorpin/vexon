@@ -9,11 +9,20 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', async (req, res) => {
+app.get("/", async (req, res) => {
+    console.log("=>>> service home page ::: ")
     const context = {
         title: 'Home Page'
     };
     res.render('index', context);
+});
+
+app.get("/about", async (req, res) => {
+    console.log("=>>> service about page ::: ")
+    const context = {
+        title: 'Home Page'
+    };
+    res.render('about', context);
 });
 
 const PORT = process.env.PORT || 8080;
