@@ -2,19 +2,19 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 
-const webAppRoutes = require('./routes/webapp.routes').default;
-
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-/** Serve static files from 'assets' directory */
-app.use(express.static(path.join(__dirname, '../', 'assets')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-/** extends routing  */
-app.use('/', webAppRoutes);
-
+app.use('/', async (req, res) => {
+    const context = {
+        title: 'Home Page'
+    };
+    res.render('index', context);
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
